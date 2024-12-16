@@ -38,7 +38,7 @@ export const venueSlice = createSlice({
   ],
   reducers: {
 
-    incrementQuantity: (state, action) => {
+    incrementVenueQuantity: (state, action) => {
       const { payload: index } = action;
       if (state[index]) {
         if (state[index].name === " Auditorium Hall (Capacity:200)" && state[index].quantity >= 3) {
@@ -46,7 +46,7 @@ export const venueSlice = createSlice({
         state[index].quantity++;
       }
     },
-    decrementQuantity: (state, action) => {
+    decrementVenueQuantity: (state, action) => {
       const { payload: index } = action;
       if (state[index] && state[index].quantity > 0) {
         state[index].quantity--;
@@ -55,6 +55,6 @@ export const venueSlice = createSlice({
   },
 });
 
-export const { incrementQuantity, decrementQuantity } = venueSlice.actions;
+export const { incrementVenueQuantity, decrementVenueQuantity } = venueSlice.actions;
 
 export default venueSlice.reducer;
